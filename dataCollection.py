@@ -1,10 +1,20 @@
+import os
 # This will be the starting point for getting data for March Madness
 
-# just some practice
+# create or open the directory
+dataDir = os.path.join('C:\\', 'Data', 'Python Projects', 'MarchMadness', 'MMDataFiles')
 
-colors = ["red", "blue", "green"]
+print(dataDir)
 
-i = 0
-while i < len(colors):
-    print ("Lets try %s as a test" % colors[i])
-    i += 1
+isItThere = os.path.exists(dataDir)
+
+print(isItThere)
+
+myFile = open((dataDir + '\\testfile.txt'), 'w')
+
+myFile.write('Test Data')
+myFile.close()
+
+myFile = open((dataDir + '\\testfile.txt'), 'a')
+myFile.write('Test More Data')
+myFile.close()
